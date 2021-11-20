@@ -13,5 +13,5 @@ module.exports = {
     'prettier/prettier': 'error',
   },
   plugins: ['prettier'],
-  ignorePatterns: ['**/lib/*.js'],
+  ignorePatterns: ['**/lib/*.js', 'node_modules/'],
 };

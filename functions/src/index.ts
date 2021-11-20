@@ -12,6 +12,8 @@ import { doc, setDoc, getDoc } from 'firebase/firestore';
 const firebaseApp = initializeApp(config);
 const db = getFirestore();
 
+console.log({ firebaseApp });
+
 // export const helloWorld = functions.https.onRequest((request, response) => {
 //   corsHandler(request, response, async () => {
 //     const data = { structuredData: true };
@@ -35,7 +37,7 @@ const setSelectedColors = functions.https.onRequest((request, response) => {
 
 const getSelectedColors = functions.https.onRequest((request, response) => {
   corsHandler(request, response, async () => {
-    const selected_colors_doc: any = await getDoc(
+    const selected_colors_doc = await getDoc(
       doc(db, 'selected_colors', 'gJyrN2PRIqmcc0Z3F8j6')
     );
     console.log(selected_colors_doc.data());
